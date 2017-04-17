@@ -66,4 +66,6 @@ def document_save(sender, instance, created, **kwargs):
             }
         }
 
+        options.update(settings.previews_options_callback(instance))
+
         fp.generate(document_url, **options)
