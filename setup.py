@@ -13,6 +13,10 @@ install_requires = [
     'django-model-utils'
 ]
 
+tests_require = [
+    'responses'
+]
+
 
 def read(*paths):
     """
@@ -53,5 +57,6 @@ setup(
     packages=get_packages('wagtaildocs_previews'),
     license='MIT',
     long_description=read('README.rst'),
-    install_requires=install_requires
+    install_requires=install_requires,
+    tests_require=tests_require,
 )
