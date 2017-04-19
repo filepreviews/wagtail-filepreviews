@@ -4,6 +4,9 @@ wagtail-filepreviews
 .. image:: https://travis-ci.org/filepreviews/wagtail-filepreviews.svg?branch=master
     :target: https://travis-ci.org/filepreviews/wagtail-filepreviews
 
+.. image:: https://img.shields.io/pypi/v/wagtaildocs_previews.svg
+   :target: https://pypi.python.org/pypi/wagtaildocs_previews
+
 Extend Wagtail's Documents with image previews and metadata from FilePreviews
 
 Installing
