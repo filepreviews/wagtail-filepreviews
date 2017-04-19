@@ -9,7 +9,7 @@ from .models import PreviewableDocument
 @csrf_exempt
 def filepreviews_webhook(request):
     if request.method == 'POST':
-        body = json.loads(request.body)
+        body = json.loads(request.body.decode('utf8'))
         user_data = body.get('user_data', {})
         document_id = user_data.get('document_id')
 

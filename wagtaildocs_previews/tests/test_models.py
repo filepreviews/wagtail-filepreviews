@@ -14,7 +14,7 @@ from wagtaildocs_previews.models import (
 
 def setup_mock():
     def request_callback(request):
-        payload = json.loads(request.body)
+        payload = json.loads(request.body.decode('utf8'))
         body = {
             'id': '1',
             'status': 'pending',

@@ -24,7 +24,7 @@ class TestWebhookView(TestCase):
             self.url, json.dumps(post_data), content_type='application/json'
         )
 
-        self.assertEqual(response.content, '{"success": true}')
+        self.assertEqual(response.content.decode('utf8'), '{"success": true}')
 
     def test_post_updates_document(self):
         post_data = {
