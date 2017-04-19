@@ -13,7 +13,7 @@ Install with **pip**:
 
 .. code-block:: sh
 
-    $ pip install wagtail-filepreviews
+    $ pip install wagtaildocs_previews
 
 Settings
 ~~~~~~~~
