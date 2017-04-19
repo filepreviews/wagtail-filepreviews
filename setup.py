@@ -2,22 +2,10 @@
 # -*- coding: utf-8 -*-
 import os
 import re
+import shutil
+import sys
 
 from setuptools import setup
-
-
-install_requires = [
-    'wagtail>=1.9,<2.0',
-    'jsonfield>=2.0.1<3.0',
-    'filepreviews>=2.0.2,<3.0',
-    'django-model-utils>=3.0.0,<4.0'
-]
-
-tests_require = [
-    'responses>=0.5.1,<1.0',
-    'flake8>=3.3.0<4.0',
-    'isort>=4.2.5,<5.0'
-]
 
 
 def read(*paths):
@@ -46,9 +34,36 @@ def get_packages(package):
     ]
 
 
+install_requires = [
+    'wagtail>=1.9,<2.0',
+    'jsonfield>=2.0.1<3.0',
+    'filepreviews>=2.0.2,<3.0',
+    'django-model-utils>=3.0.0,<4.0'
+]
+
+tests_require = [
+    'responses>=0.5.1,<1.0',
+    'flake8>=3.3.0<4.0',
+    'isort>=4.2.5,<5.0'
+]
+
+version = get_version('wagtaildocs_previews')
+
+if sys.argv[-1] == 'publish':
+    os.system("python setup.py sdist bdist_wheel")
+    os.system("twine upload dist/*")
+    print("You probably want to also tag the version now:")
+    print("  git tag -a %s -m 'version %s'" % (version, version))
+    print("  git push --tags")
+    shutil.rmtree('dist')
+    shutil.rmtree('build')
+    shutil.rmtree('wagtaildocs_previews.egg-info')
+    sys.exit()
+
+
 setup(
     name='wagtaildocs_previews',
-    version=get_version('wagtaildocs_previews'),
+    version=version,
     description=(
         'Extend Wagtail\'s Documents with image previews and '
         'metadata from FilePreviews'
