@@ -1,4 +1,5 @@
 from wagtail.wagtaildocs.api.v2 import endpoints
+
 from .serializers import DocumentSerializer
 
 

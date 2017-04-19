@@ -1,7 +1,7 @@
 from django.conf import settings
-from django.utils.module_loading import import_string
 from django.core.exceptions import ImproperlyConfigured
 from django.utils import six
+from django.utils.module_loading import import_string
 
 
 def get_callback_function(setting_name, default=None):

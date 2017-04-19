@@ -1,12 +1,15 @@
 import json
 
-import responses
-from django.test import TestCase
 from django.core.files.base import ContentFile
+from django.test import TestCase
 from django.utils.six import b
+
+import responses
 from wagtail.wagtailcore.models import Site
 
-from wagtaildocs_previews.models import PreviewableDocument, FilePreviewsSettings
+from wagtaildocs_previews.models import (
+    FilePreviewsSettings, PreviewableDocument
+)
 
 
 def setup_mock():

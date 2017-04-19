@@ -3,3 +3,5 @@ django-model-utils==3.0.0
 filepreviews==2.0.2
 jsonfield==2.0.1
 responses==0.5.1
+flake8==3.3.0
+isort==4.2.5
