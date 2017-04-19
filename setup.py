@@ -70,7 +70,7 @@ setup(
         'Topic :: Internet :: WWW/HTTP :: Site Management',
     ],
     install_requires=install_requires,
-    extra_requires={
+    extras_require={
         'test': tests_require,
     }
 )
