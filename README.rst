@@ -7,7 +7,7 @@ wagtail-filepreviews
 .. image:: https://img.shields.io/pypi/v/wagtaildocs_previews.svg
    :target: https://pypi.python.org/pypi/wagtaildocs_previews
 
-Extend Wagtail's Documents with image previews and metadata from FilePreviews
+Extend Wagtail's Documents with image previews and metadata from `FilePreviews.io`_
 
 Installing
 ----------
@@ -50,6 +50,14 @@ URL configuration
         # ...
     ]
 
+FilePreviews.io API Keys
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+For previews to be generated for your documents, you'll need to have a
+`FilePreviews.io`_ account and an application's credentials. Once you have
+the credentials, add them under the ``FilePreviews`` settings in your
+Wagtail admin.
+
 Usage
 -----
 
@@ -91,3 +99,5 @@ In your template now you'll be able to access the ``preview_data`` field.
         <h2>{{ page.book_file.title }}</h2>
         <img src="{{ page.book_file.preview_data.preview.url|default:'http://placehold.it/300x300' }}" alt="">
     {% endblock %}
+
+.. _FilePreviews.io: http://filepreviews.io/

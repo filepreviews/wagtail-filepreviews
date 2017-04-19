@@ -66,7 +66,7 @@ setup(
     version=version,
     description=(
         'Extend Wagtail\'s Documents with image previews and '
-        'metadata from FilePreviews'
+        'metadata from FilePreviews.io'
     ),
     author='José Padilla',
     author_email='jpadilla@filepreviews.io',
