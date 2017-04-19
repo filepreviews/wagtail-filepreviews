@@ -9,7 +9,8 @@ from setuptools import setup
 install_requires = [
     'wagtail>=1.9,<2.0',
     'jsonfield',
-    'filepreviews'
+    'filepreviews',
+    'django-model-utils'
 ]
 
 

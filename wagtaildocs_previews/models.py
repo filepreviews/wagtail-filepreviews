@@ -8,9 +8,12 @@ from django.utils.translation import ugettext_lazy as _
 
 from filepreviews import FilePreviews
 from jsonfield import JSONField
+from model_utils import FieldTracker
 from wagtail.contrib.settings.models import BaseSetting, register_setting
 from wagtail.wagtailcore.models import Site
 from wagtail.wagtaildocs.models import AbstractDocument
+
+from .settings import previews_options_callback
 
 
 @register_setting
@@ -43,13 +46,28 @@ class PreviewableDocument(AbstractPreviewableDocument):
         'preview_data'
     ]
 
+    tracker = FieldTracker(fields=['file'])
+
 
 @receiver(post_save, sender=PreviewableDocument)
 def document_save(sender, instance, created, **kwargs):
+    previous_file = instance.tracker.previous('file')
+    file_changed = previous_file != instance.file
+    should_generate_preview = False
+
+    if created and file_changed:
+        should_generate_preview = True
+
+    if not created and file_changed:
+        should_generate_preview = True
+
+    if not should_generate_preview:
+        return
+
     site = Site.objects.get(is_default_site=True)
     settings = FilePreviewsSettings.for_site(site)
 
-    if created and settings.is_enabled:
+    if settings.is_enabled:
         fp = FilePreviews(
             api_key=settings.api_key,
             api_secret=settings.api_secret
@@ -66,6 +84,5 @@ def document_save(sender, instance, created, **kwargs):
             }
         }
 
-        options.update(settings.previews_options_callback(instance))
-
+        options.update(previews_options_callback(instance))
         fp.generate(document_url, **options)

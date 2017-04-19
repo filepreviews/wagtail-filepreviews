@@ -6,6 +6,7 @@ from django.utils import six
 
 def get_callback_function(setting_name, default=None):
     func = getattr(settings, setting_name, None)
+
     if not func:
         return default
 
