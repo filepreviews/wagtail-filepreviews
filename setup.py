@@ -20,6 +20,14 @@ tests_require = [
 ]
 
 
+def read(*paths):
+    """
+    Build a file path from paths and return the contents.
+    """
+    with open(os.path.join(*paths), 'r') as f:
+        return f.read()
+
+
 def get_version(package):
     """
     Return package version as listed in `__version__` in `init.py`.
@@ -50,7 +58,7 @@ setup(
     url='https://github.com/filepreviews/wagtail-filepreviews',
     packages=get_packages('wagtaildocs_previews'),
     license='MIT',
-    long_description='See https://github.com/filepreviews/wagtail-filepreviews for details',
+    long_description=read('README.rst'),
     classifiers=[
         'Development Status :: 4 - Beta',
         'Environment :: Web Environment',
