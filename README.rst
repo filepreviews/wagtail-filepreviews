@@ -62,7 +62,7 @@ Usage
 -----
 
 Since we're extending via ``WAGTAILDOCS_DOCUMENT_MODEL`` you should be using
-``get_document_model()`` to reference to correct Document model.
+``get_document_model()`` to reference the correct Document model.
 
 .. code:: python
 
