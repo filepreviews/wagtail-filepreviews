@@ -100,4 +100,24 @@ In your template now you'll be able to access the ``preview_data`` field.
         <img src="{{ page.book_file.preview_data.preview.url|default:'http://placehold.it/300x300' }}" alt="">
     {% endblock %}
 
+Configuring thumbnail sizes and other options
+---------------------------------------------
+
+By default, image previews and not resized at all. If you want to specify additional `FilePreviews options`_ like thumbnail size or metadata, specify the ``WAGTAILDOCS_PREVIEWS_OPTIONS_CALLBACK`` option in your settings.
+
+.. code:: python
+
+    WAGTAILDOCS_PREVIEWS_OPTIONS_CALLBACK='mysite.utils.get_preview_options'
+
+In the ``mysite.utils`` module, create a `get_preview_options` method.
+
+.. code:: python
+
+    def get_preview_options(document):
+        return {
+            'sizes': [300],
+            'metadata': ['ocr']
+        }
+
 .. _FilePreviews.io: http://filepreviews.io/
+.. _FilePreviews options: http://filepreviews.io/docs/endpoints/
