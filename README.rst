@@ -119,5 +119,13 @@ In the ``mysite.utils`` module, create a `get_preview_options` method.
             'metadata': ['ocr']
         }
 
+Bonus: Coding video session
+---------------------------
+
+Here’s a coding session video building up to the released package.
+
+.. image:: https://cloud.githubusercontent.com/assets/83319/25309749/3bb64e16-27a3-11e7-8057-350a52484a0a.png
+   :target: https://www.youtube.com/watch?v=p2VY9zX2nNw
+
 .. _FilePreviews.io: http://filepreviews.io/
 .. _FilePreviews options: http://filepreviews.io/docs/endpoints/
