@@ -5,7 +5,7 @@ from django.test import TestCase
 from django.utils.six import b
 
 import responses
-from wagtail.wagtailcore.models import Site
+from wagtail.core.models import Site
 
 from wagtaildocs_previews.models import (
     FilePreviewsSettings, PreviewableDocument

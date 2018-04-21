@@ -35,7 +35,7 @@ def get_packages(package):
 
 
 install_requires = [
-    'wagtail>=1.9,<2.0',
+    'wagtail>=2.0<3.0',
     'jsonfield>=2.0.1<3.0',
     'filepreviews>=2.0.2,<3.0',
     'django-model-utils>=3.0.0,<4.0'

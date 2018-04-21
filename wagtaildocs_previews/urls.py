@@ -2,7 +2,7 @@ from __future__ import absolute_import, unicode_literals
 
 from django.conf.urls import include, url
 
-from wagtail.wagtaildocs import urls as wagtaildocs_urls
+from wagtail.documents import urls as wagtaildocs_urls
 
 from .views import filepreviews_webhook
 

@@ -66,9 +66,9 @@ Since we're extending via ``WAGTAILDOCS_DOCUMENT_MODEL`` you should be using
 
 .. code:: python
 
-    from wagtail.wagtailcore.models import Page
-    from wagtail.wagtaildocs.models import get_document_model
-    from wagtail.wagtaildocs.edit_handlers import DocumentChooserPanel
+    from wagtail.core.models import Page
+    from wagtail.documents.models import get_document_model
+    from wagtail.documents.edit_handlers import DocumentChooserPanel
 
 
     class BookPage(Page):
