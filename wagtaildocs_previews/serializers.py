@@ -1,5 +1,5 @@
 from rest_framework.serializers import JSONField
-from wagtail.wagtaildocs.api.v2 import serializers
+from wagtail.documents.api.v2 import serializers
 
 
 class DocumentSerializer(serializers.DocumentSerializer):

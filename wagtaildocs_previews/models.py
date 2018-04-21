@@ -1,17 +1,17 @@
 from __future__ import unicode_literals
 
-from django.core.urlresolvers import reverse
 from django.db import models
 from django.db.models.signals import post_save
 from django.dispatch import receiver
+from django.urls import reverse
 from django.utils.translation import ugettext_lazy as _
 
 from filepreviews import FilePreviews
 from jsonfield import JSONField
 from model_utils import FieldTracker
 from wagtail.contrib.settings.models import BaseSetting, register_setting
-from wagtail.wagtailcore.models import Site
-from wagtail.wagtaildocs.models import AbstractDocument
+from wagtail.core.models import Site
+from wagtail.documents.models import AbstractDocument
 
 from .settings import previews_options_callback
 
