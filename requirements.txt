@@ -1,4 +1,4 @@
-wagtail==2.0.1
+wagtail==2.7.2
 django-model-utils==3.0.0
 filepreviews==2.0.2
 jsonfield==2.0.1
